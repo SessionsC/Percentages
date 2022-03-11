@@ -10,22 +10,38 @@ using System.Windows.Forms;
 
 namespace Percentages
 {
-    public partial class Form1 : Form
+    public partial class MainMenu : Form
     {
-        public Form1()
+        public MainMenu()
         {
             InitializeComponent();
+            
         }
 
         private void Playbutton_Click(object sender, EventArgs e)
         {
-            lblPlay.Text = "Let's Go";
+           
+            Playbutton.Visible = false;
+            Leaderboard.Visible = false;
+            lblleader.Visible = false;
+
+            
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void LoadGame(object sender, EventArgs e)
         {
-            lblleader.Text = "Highscore: Cullen 1";
+            GameScreen gameWindow = new GameScreen();
+            gameWindow.Show();
+            this.Hide();
+                
+
         }
 
+        private void LoadLeaderBoard(object sender, EventArgs e)
+        {
+            LeaderBoard LeaderWindow = new LeaderBoard();
+            LeaderWindow.Show();
+            this.Hide();
+        }
     }
 }
